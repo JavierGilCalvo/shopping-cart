@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { useFilters } from '../hooks/UseFilters.js'
+import { useFilters } from '../hooks/useFilters.js'
 import './Filters.css'
 // Pasos para elaborar el contexto:
 // 1.- Crear el contexto.
