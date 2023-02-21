@@ -2,6 +2,7 @@ import './Cart.css'
 import { useId, useContext } from 'react'
 import { ClearCartIcon, CartIcon } from './Icons'
 import { CartContext } from '../context/cart'
+import { CartItem } from './CartItem'
 
 export function Cart () {
   const cartCheckboxId = useId()
@@ -15,27 +16,14 @@ export function Cart () {
       <aside className='cart'>
         <ul>
           {
-                cart.map(product => {
-                  return (
-                    <li key={product.id}>
-                      <img src={product.thumbnail} alt={product.title} />
-                      <div>
-                        <strong>{product.title}</strong> - ${product.price}
-                      </div>
-                      <footer>
-                        <small>
-                          Qty: {product.quantity}
-                        </small>
-                        <button onClick={() => addToCart(product)}>+</button>
-                        <button onClick={() => extractOneFromCart(product)}>-</button>
-                      </footer>
-                    </li>
-                  )
-                })
-        }
-
+            cart.map(product => {
+              return (
+                <CartItem key={product.id} product={product} addToCart={() => addToCart(product)} extractOneFromCart={() => extractOneFromCart(product)} />
+              )
+            })
+          }
         </ul>
-        <button onClick={clearCart()}>
+        <button onClick={clearCart}>
           <ClearCartIcon />
         </button>
       </aside>

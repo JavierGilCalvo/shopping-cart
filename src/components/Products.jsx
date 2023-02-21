@@ -23,7 +23,7 @@ export function Products ({ products }) {
                 <strong>{product.title}</strong> - ${product.price}
               </div>
               <div>
-                <button onClick={() => isProductInCart ? removeFromCart(product) : addToCart(product)}>
+                <button className={isProductInCart ? 'button-to-remove' : ''} onClick={() => isProductInCart ? removeFromCart(product) : addToCart(product)}>
                   {isProductInCart
                     ? <RemoveFromCartIcon />
                     : <AddToCartIcon />}

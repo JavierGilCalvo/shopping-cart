@@ -45,3 +45,11 @@
     object-fit: cover;
     background: #fff;
   }
+
+  .products button {
+    background-color: rgb(98, 157, 233);
+  }
+
+  .products .button-to-remove {
+    background-color: rgb(233, 98, 98);
+  }
