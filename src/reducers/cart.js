@@ -54,6 +54,7 @@ export const cartReducer = (state, action) => {
       return cartToUpdate
     }
     default:{
+      updateLocalStorage([])
       return []
     }
   }
